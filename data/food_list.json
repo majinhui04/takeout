@@ -1,0 +1,44 @@
+{
+	"code":0,
+	"msg":"success",
+	"data":[
+					{
+						"id":11,
+						"name":"鱼香肉丝",
+						"price":"12",
+						"foodTypeId":"1",
+						"foodTypeName":"赶脚饭"
+					},
+					{
+						"id":12,
+						"name":"鸡腿饭",
+						"price":"15",
+						"foodTypeId":"1",
+						"foodTypeName":"赶脚饭"
+					},
+					{
+						"id":13,
+						"name":"台湾入肉贩",
+						"price":"12",
+						"foodTypeId":"1",
+						"foodTypeName":"赶脚饭"
+					},
+					{
+						"id":21,
+						"name":"鸡腿面",
+						"price":"12",
+						"foodTypeId":"2",
+						"foodTypeName":"面"
+					},
+					{
+						"id":21,
+						"name":"番茄鸡蛋面",
+						"price":"12",
+						"foodTypeId":"2",
+						"foodTypeName":"面"
+					}
+			
+			
+
+	]
+}

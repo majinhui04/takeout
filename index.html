@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>外卖</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/spoutlet/wei_dialog.css">
+	
+	
+</head>
+<body id="takeout-wrapper">
+	<div class="navbar" >
+		<span class="order-count">已选<b id="totalAmount">0</b>个菜,共计<b id="totalPrice">0</b>元</span>
+  		<span class="restaurant">遇江南></span>
+  		<span class="myorder">我的订单</span>
+	</div>
+	
+	<div class="footer">
+		<a href="javascript:;" class="myinfo">个人信息</a>
+		<a href="javascript:;" class="book-btn">我选好了</a>
+	</div>
+	<div class="container clearfix" >
+		<!-- ddd -->
+		<div class="dish-category-list" id="sidebar">
+			<div class="fixbox"></div>
+			<div id="dish-category-box"></div>
+	  		<div class="fixbox"></div>
+		</div>
+		
+		<!-- dish-list start -->
+		<div id="content">
+			<!-- <div class="dish-list" data-categoryid="">
+				<div class="fixbox"></div>
+				<div class="dish-box"></div>
+					    	<div class="fixbox"></div>
+			</div> -->
+		</div>
+			
+		<!-- dish-list start -->
+
+	</div>
+
+	<div id="info-wrapper">
+		<div class="info-header">
+			<span class="info-cancel-btn">取消</span>
+			<span class="info-save-btn">保存</span>
+			<span class="info-header-title">送餐地址</span>
+			
+		</div>
+
+		<div class="info-content">
+			<div class="info-input-box">
+				<label class="info-input-label">姓名：</label>
+				<input type="text" class="info-input-text info-input-name" placeholder="请输入姓名">
+			</div>
+			<div class="info-input-box">
+				<label class="info-input-label">手机：</label>
+				<input type="tel" class="info-input-text info-input-cellphone" placeholder="请输入手机">
+			</div>
+			<div class="info-input-box">
+				<label class="info-input-label">送餐地址：</label>
+				<input type="text" class="info-input-text info-input-address" placeholder="请输入地址">
+			</div>
+
+		</div>
+
+	</div>
+	<div id="myorder-wrapper">
+		<div class="myorder-header">
+			<span class="myorder-back-btn">返回</span>
+			<span class="myorder-header-title">我的订单</span>
+			
+		</div>
+
+		<div class="myorder-content">
+			<!-- <div class="myorder-item">
+				<span class="myorder-time">2012-12-12</span>
+				<span class="myorder-username">马金辉</span>
+				<div class="myorder-info">
+					<span class="myorder-amount-box">总计<b class="myorder-amount">3</b>个菜</span>
+					<span class="myorder-price-box">总计<b class="myorder-price">44</b>元</span>
+				</div>
+				<a href="javascript:;" class="myorder-cancel-btn">取消订单</a>
+			</div> -->
+
+		</div>
+
+	</div>
+	<div id="order-wrapper">
+		<div class="order-header">
+			<a href="javascript:;" class="order-info">
+				<div class="order-receiver-box">收货人：<span class="order-receiver"></span><span class="order-cellphone"></span></div>
+				<div class="order-address-box">收货地址：<span class="order-address"></span></div>
+			</a>
+		</div>
+		<div>
+			<div class="order-input-box">
+				<label for="">特殊要求：</label>
+				<input type="text" class="order-notes" placeholder="您有什么特殊要求">
+			</div>
+			<div class="order-input-box">
+				<label for="">就餐时间：</label>
+				<select name="order-time-hour" id="order-time-hour" class="order-time order-time-hour">
+					<option value="">几时</option>
+				    <option value="01">
+				        01时
+				    </option>
+				    <option value="02">
+				        02时
+				    </option>
+				    <option value="03">
+				        03时
+				    </option>
+				    <option value="04">
+				        04时
+				    </option>
+				    <option value="05">
+				        05时
+				    </option>
+				    <option value="06">
+				        06时
+				    </option>
+				    <option value="07">
+				        07时
+				    </option>
+				    <option value="08">
+				        08时
+				    </option>
+				    <option value="09">
+				        09时
+				    </option>
+				    <option value="10">
+				        10时
+				    </option>
+				    <option value="11">
+				        11时
+				    </option>
+				    <option value="12">
+				        12时
+				    </option>
+				    <option value="13">
+				        13时
+				    </option>
+				    <option value="14">
+				        14时
+				    </option>
+				    <option value="15">
+				        15时
+				    </option>
+				    <option value="16">
+				        16时
+				    </option>
+				    <option value="17">
+				        17时
+				    </option>
+				    <option value="18">
+				        18时
+				    </option>
+				    <option value="19">
+				        19时
+				    </option>
+				    <option value="20">
+				        20时
+				    </option>
+				    <option value="21">
+				        21时
+				    </option>
+				    <option value="22">
+				        22时
+				    </option>
+				    <option value="23">
+				        23时
+				    </option>
+				    <option value="24">
+				        24时
+				    </option>
+
+				</select>
+				<select name="order-time-minute" id="order-time-minute" class="order-time order-time-minute">
+					<option value="">几分</option>
+					<option value="00">
+				        00分
+				    </option>
+				    <option value="10">
+				        10分
+				    </option>
+				    <option value="20">
+				        20分
+				    </option>
+				    <option value="30">
+				        30分
+				    </option>
+				    <option value="40">
+				        40分
+				    </option>
+				    <option value="50">
+				        50分
+				    </option>
+				</select>
+			</div>
+		</div>
+		<div class="order-content">
+			<div class="order-count-box">
+			<!-- 共计<span class="order-dish-number">2</span>个菜，<span class="order-dish-total">44</span>元 <span class="order-send-cost">(含配送费<b>0</b>元)</span> -->
+			</div>
+			<div class="order-list">
+				<!-- <div class="order-item">
+					<p class="order-dishname">宫保鸡丁</p>
+					<p class="order-dishprice">23.00</p>
+					<span class="order-dishamount">1</span>
+				</div>
+				<div class="order-item">
+					<p class="order-dishname">鱼香熔丝</p>
+					<p class="order-dishprice">23.00</p>
+					<span class="order-dishamount">2</span>
+				</div> -->
+			</div>
+			
+		</div>
+		
+		<div class="fixbox"></div>
+		<!-- <div class="order-footer">
+			<span class="back-btn order-back" style="float:left;">返回</span>
+			<span class="order-sure-btn">立即下单</span>
+			
+		</div> -->
+	</div>
+
+	<div class="order-footer" style="display:none;z-index:201;">
+		<span class="back-btn order-back" style="float:left;">返回</span>
+		<span class="order-sure-btn">立即下单</span>
+		
+	</div>
+	<script type="text/template" id="myorderItemTpl">
+		<div class="myorder-item">
+				<span class="myorder-time">{time}</span>
+				<span class="myorder-username">{username}</span>
+				<div class="myorder-info">
+					<span class="myorder-amount-box">总计<b class="myorder-amount">{totalAmount}</b>个菜</span>
+					<span class="myorder-price-box">总计<b class="myorder-price">{totalPrice}</b>元</span>
+				</div>
+				<a href="javascript:;" class="myorder-cancel-btn" data-uuid="{id}">取消订单</a>
+			</div>
+	</script>
+	<script type="text/template" id="orderCountTpl">
+		共计<span class="order-dish-number">{number}</span>个菜，<span class="order-dish-total">{total}</span>元 <span class="order-send-cost">(含配送费<b>0</b>元)</span>
+	</script>
+	<script type="text/template" id="orderItemTpl">
+		<div class="order-item">
+			<p class="order-dishname">{name}</p>
+			<p class="order-dishprice">{price}</p>
+			<span class="order-dishamount">{amount}</span>
+		</div>
+	</script>
+	<script type="text/template" id="dishCategoryTpl">
+		<a href="javascript:;" class="dish-category-list-link" data-uuid="{id}"> 
+  			{name}
+			<span class="amount">0</span>
+  		</a>
+	</script>
+	<script type="text/template" id="dishTpl">
+		<div class="dish-item" data-uuid="{id}" data-price="{price}" data-categoryid="{categoryid}" data-name="{name}">
+      		<a class="dish-name-link" href="javascript:;">{index}.{name}</a>
+	      	<div class="price">￥{price}</div>	
+      		<div class="amount-handle-box">
+	    		<div class="amount-btn-group" >
+				  	<a href="javascript:;" class="amount-btn amount-btn-minus">-</a>
+				  	<span class="amount-btn amount-btn-number">0</span>
+				  	<a href="javascript:;" class="amount-btn amount-btn-plus">+</a>
+				</div>
+      		</div>	
+    	</div>
+	</script>
+	<script type="text/javascript" src="vendor/jquery/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/common/takeout_config.js"></script>
+	<script type="text/javascript" src="js/common/takeout_common.js"></script>
+	<script type="text/javascript" src="js/modules/menuApp.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		
+		window['menuApp']= new MenuApp();
+
+	});
+
+	</script>
+</body>
+</html>

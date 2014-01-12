@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="../css/public.css">
+	<link rel="stylesheet" type="text/css" href="../css/spoutlet/wei_dialog.css">
+	<title>管理平台</title>
+	<style type="text/css">
+	.orders{
+		-webkit-overflow-scrolling: touch;
+		font-size: 12px;
+		color: #686868;
+		line-height: 1.6;
+	}
+	.orders-wrapper{
+		width: 98%;
+		margin:0 auto;
+	}
+	.orders-info{
+		position: relative;
+		padding: 3px 0;
+		border-bottom: 1px solid #ccc;
+	}
+	.orders-cancel-btn{
+		position: absolute;
+		right: 65px;
+		top: 5px;
+		color: #999;
+	}
+	.orders-send-btn{
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		color: red;
+	}
+	.orders-list{
+		padding-top: 5px;
+		padding-left: 25px;
+	}
+	.orders-count-price{
+		font-size: 18px;
+		color: red;
+		padding: 0 5px;
+	}
+	.orders-info-box span{
+		display: inline-block;
+		vertical-align: top;
+		width: 60px;
+		text-align: right;
+		margin-right: 7px;
+	}
+	.orders-list{
+		color: orange;
+	}
+	.orders-cellphone{
+		font-size: 14px;
+	}
+	.orders-dish-name{
+		display: inline-block;
+		min-width: 70px;
+		text-align: center;
+	}
+	.orders-count{
+		padding-left: 15px;
+	}
+
+	.navbar {
+position: relative;
+min-height: 50px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+}
+.navbar-default {
+background-color: #f8f8f8;
+border-color: #e7e7e7;
+}
+.navbar-default .navbar-brand {
+color: #777777;
+}
+.navbar-brand {
+float: left;
+padding: 15px 15px;
+font-size: 18px;
+line-height: 20px;
+}
+button:focus,input:focus,a:focus {
+	outline: 0 none;
+	-webkit-user-modify: read-write-plaintext-only;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.orders-actions{
+	text-align: right;
+	padding: 15px;
+}
+
+	</style>
+</head>
+<body class="orders">
+ 
+	<div class="navbar navbar-default" role="navigation">
+       
+     
+            <a class="navbar-brand" href="#about">订单管理平台</a>
+       
+    </div>
+	<div class="container">
+		<div class="orders-actions">
+			<button class="orders-switch-btn" id="orderSwitch" data-status="on">停止接收订单</button>
+
+		</div>
+		<div class="orders-wrapper">
+			<!-- <div class="orders-info" data-uuid="11">
+				<p class="orders-info-box">
+					<span>姓名:</span><b class="orders-name">马机会</b>
+				</p>
+				<p class="orders-info-box">
+					<span>电话:</span><a href="javascript:;" class="orders-cellphone">13444545894</a>
+				</p>
+				<p class="orders-info-box">
+					<span>地址:</span><b class="orders-address">杭州市西湖区</b>
+				</p>
+				<p class="orders-info-box">
+					<span>下单时间:</span><b class="orders-booktime">2013-12-12 11:30</b>
+				</p>
+				<p class="orders-info-box">
+					<span>就餐时间:</span><b class="orders-eattime">2013-12-12 12:30</b>
+				</p>
+				<p class="orders-info-box">
+					<span>特殊要求:</span><b class="orders-booktime">啦啦第三方范德萨发的深V，DSD酸大声道飒飒是啦</b>
+				</p>
+				<div class="orders-list">
+					<div class="orders-item">
+						<span class="orders-dish-name">鱼香肉丝</span>
+						<span class="orders-dish-price">12元</span>
+						<span class="orders-dish-amount">2</span>份
+					</div>
+					<div class="orders-item">
+						<span class="orders-dish-name">扬州炒饭</span>
+						<span class="orders-dish-price">12元</span>
+						<span class="orders-dish-amount">1</span>份
+					</div>
+				</div>
+				<div class="orders-count">
+					<span>共计<b  class="orders-count-amount">3</b>个菜</span>,<span>共计<b class="orders-count-price">36</b>元</span>
+				</div>
+				<a href="javascript:;" class="orders-send-btn">点击配送</a>
+				<a href="javascript:;" class="orders-cancel-btn">取消配送</a>
+			</div> -->
+
+		</div>
+	</div>
+	<script type="text/template" id="ordersInfoTpl">
+		<div class="orders-info" data-uuid="{id}">
+				<p class="orders-info-box">
+					<span>姓名:</span><b class="orders-name">{name}</b>
+				</p>
+				<p class="orders-info-box">
+					<span>电话:</span><a  href="tel:{cellphone}" class="orders-cellphone">{cellphone}</a>
+				</p>
+				<p class="orders-info-box">
+					<span>地址:</span><b class="orders-address">{address}</b>
+				</p>
+				<p class="orders-info-box">
+					<span>下单时间:</span><b class="orders-booktime">{booktime}</b>
+				</p>
+				<p class="orders-info-box">
+					<span>就餐时间:</span><b class="orders-eattime">{eattime}</b>
+				</p>
+				<p class="orders-info-box">
+					<span>特殊要求:</span><b class="orders-notes">{notes}</b>
+				</p>
+				<div class="orders-list">
+					{ordersList}
+				</div>
+				<div class="orders-count">
+					{ordersCount}
+				</div>
+				<a href="javascript:;" class="orders-send-btn">点击配送</a>
+				<a href="javascript:;" class="orders-cancel-btn">取消配送</a>
+			</div>
+	</script>
+ 	<script type="text/template" id="ordersItemTpl">
+		<div class="orders-item">
+			<span class="orders-dish-name">{name}</span>
+			<span class="orders-dish-price">{price}元</span>
+			<span class="orders-dish-amount">{amount}</span>份
+		</div>
+	</script>
+	<script type="text/template" id="ordersCountTpl">
+		<span>共计<b  class="orders-count-amount">{amount}</b>个菜</span>,<span>共计<b class="orders-count-price">{price}</b>元</span>
+	</script>
+
+    <script type="text/javascript" src="../vendor/jquery/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../vendor/bootstrap-3.0.3/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/common/takeout_config.js"></script>
+	<script type="text/javascript" src="../js/common/takeout_common.js"></script>
+	<script type="text/javascript" src="../js/modules/orderApp.js"></script>
+
+	<script type="text/javascript">
+	$(function(){
+		window['orderApp']  = new OrderApp();
+
+	});
+	</script>
+</body>
+</html>

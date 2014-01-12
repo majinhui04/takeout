@@ -1,0 +1,59 @@
+{
+	"code":0,
+	"msg":"success",
+	"data":[
+		{
+			"id":2,
+			"time":"2013-12-1 11:20",
+			"booktime":"2013-12-1 11:20",
+			"eattime":"2013-12-1 12:20",
+			"name":"马甲",
+			"address":"杭州市西湖区文三西路",
+			"cellphone":"18042324007",
+			"status":"0",
+			"notes":"加点辣",
+			"order":[
+				{
+					"id":1,
+					"name":"水煮肉片",
+					"price":12,
+					"amount":2
+				},
+				{
+					"id":2,
+					"name":"番茄鸡蛋面",
+					"price":10,
+					"amount":1
+				},
+				{
+					"id":3,
+					"name":"扬州炒饭",
+					"price":12,
+					"amount":1
+				}
+
+			]
+		},
+		{
+			"id":12,
+			"time":"2013-12-1 11:20",
+			"booktime":"2013-12-1 11:20",
+			"eattime":"2013-12-1 12:20",
+			"name":"马甲2",
+			"address":"杭州市西湖区文三西路",
+			"cellphone":"18042324007",
+			"status":"0",
+			"notes":"。。。。。",
+			"order":[
+				{
+					"id":3,
+					"name":"扬州炒饭",
+					"price":12,
+					"amount":1
+				}
+
+			]
+		}
+
+	]
+}
